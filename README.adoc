@@ -1,0 +1,77 @@
+= Professionelle Softwareentwicklung: Pflichtabgabe 3
+:icons: font
+:icon-set: fa
+:source-highlighter: rouge
+:experimental:
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+
+== Abgabe
+
+Die Abgabe erfolgt, indem Sie Ihre Lösung in ihr GitHub Repository pushen. Bitte überprüfen Sie über die GitHub Webseite, dass dies funktioniert hat.
+
+IMPORTANT: Die Frist für die Abgabe Freitag, der 5.6.2020 um 12:00 Uhr.
+
+=== Strukturierung von Textabgaben
+
+Sie sollten Ihre schriftlichen Ausarbeitungen, soweit verlangt, als https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc] formatieren. Die READMEs, die Sie in Ihren bisherigen Projekten finden konnten, sind auch allesamt mit AsciiDoc formatiert und daran können Sie sich orientieren. Github rendert AsciiDoc zu einer schönen Seite zusammen. AsciiDoc-Dateien erkennt man meistens an der Dateiendung `.adoc`.
+
+AsciiDoc ist eine Markup-Formatierungssprache, die in reiner Textform mit jedem Editor geschrieben werden kann. Dafür sind prinzipiell keine Tools notwendig. Sie können aber dennoch ein paar Tools / Plugins in Ihre Editoren installieren, damit Sie ein wenig farbliche / technische Unterstützung beim Schreiben erhalten können. Für viele Editoren gibt es Plugins (https://marketplace.visualstudio.com/items?itemName=joaompinto.asciidoctor-vscode[VS Code / VS Codium], https://marketplace.eclipse.org/content/asciidoctor-editor[für Eclipse], https://plugins.jetbrains.com/plugin/7391-asciidoc[IntelliJ], uvm.). Nutzen Sie was Ihnen am Besten gefällt.
+
+==== Videos
+
+Es gibt viele Anleitungen zur Verwendung AsciiDoc. Hier sind ein paar Ideen:
+
+* Vor ein paar Jahren hat Jens einen Screencast erstellt. Die ersten Minuten sind aufschlussreich für die generelle Verwendung von AsciiDoc. Von uns verwendet aber niemand mehr den Editor Atom, weshalb die Hinweise zu den Plugins nicht mehr so hilfreich sind: https://www.youtube.com/watch?v=w9ZE-K5XBvc. Atom wurde von vielen EntwicklerInnen durch den Editor https://code.visualstudio.com/[VS Code] oder der freien Variante https://vscodium.com/[VS Codium] abgelöst.
+* Diverse Screencasts finden sich auf Youtube. Die ersten Minuten dieses Talks geben auch einen guten Einblick: https://www.youtube.com/watch?v=MyhiD65qaUI
+
+
+=== Rechtschreibung
+
+Sie müssen sich an geltende Rechtschreibregeln halten. Sind Ihre schriftliche Abgaben nicht leserlich oder verständlich geschrieben, können wir diese Abgaben nicht als bestanden werten. Bitte achten Sie selbst also auf eine korrekte Orthographie und Grammatik.
+
+Die Abgaben dürfen entweder in _deutscher_ oder _englischer_ Sprache verfasst werden.
+
+== Aufgaben
+Um die Aufgaben zu lösen, sollten Sie das Arbeitsblatt von Woche 7 bearbeitet haben. 
+
+=== Aufgabe 1: Polymorphismus
+Ein Roboter soll ferngesteuert werden. Die Steuerung ist ziemlich eingeschränkt, der Roboter kann einen Meter vorwärts fahren, sich um 90º im Uhrzeigersinn drehen, und einen Statusbericht ausgeben. Der Roboter bewegt sich über ein zweidimensionales Gitter. Gestartet wird an der Position (0,0).
+
+Gesteuert wird der Roboter über eine Klasse `MissionControl`. Das Programm soll beispielsweise folgendermaßen benutzt werden 
+
+[source, java]
+----
+MissionControl control = MissionControl.create();
+control.print(); 
+// Ausgabe: Robot is facing north at (0,0)
+control.step();
+control.turn();
+control.step();
+control.step();
+control.step();
+control.step();
+control.print(); 
+// Ausgabe: Robot is facing east at (4,1)
+----
+
+Es gibt aber einige Randbedingungen. Zum Einen muss die Implementierung vollständig hinter `MissionControl` versteckt werden und zum Anderen dürfen Sie ausschließlich linearen Code schreiben, d.h. alle Formen von Kontrollstrukturen (`if`, `switch`, `while`, ...) dürfen *nicht* benutzt werden. 
+
+IMPORTANT: Code, der mit Kontrollstrukturen in irgendeiner Form arbeitet, wird nicht als Lösung akzeptiert. 
+
+Implementieren Sie Ihre Lösung im Paket `robot`.
+
+TIP: Polymorphismus!
+
+=== Aufgabe 2
+
+Eine Multimap ist eine Map Datenstruktur, in der unter einem Schlüssel mehrere Werte gespeichert werden können. In Paket `datastructure` finden Sie eine naive Implementierung, die keine Generics benutzt. Ändern Sie die Implementierung so, dass sie parametrisiert und typsicher ist.  
+
+Implementieren Sie Ihre Lösung im Paket `datastructure`.
+
+WARNING: Das ist ein Implementierung, mit deren Hilfe Sie Generics üben sollen! Das ist keine sinnvolle Implementierung einer Multimap!

@@ -2,38 +2,39 @@ package datastructure;
 
 import java.util.*;
 
-public class MultiMap {
+public class MultiMap <K, T> {
 
-    private final Map storage = new HashMap();
+    private final Map <K,T> storage = new <K,T> HashMap();
 
 
-    public boolean containsKey(Object key) {
+    public boolean containsKey(K key) {
         return storage.containsKey(key);
     }
 
 
-    public Collection getAll(Object key) {
-        return (Collection) storage.get(key);
+    public Collection <T> getAll(K key) {
+        //Collection<T> collect = (Collection <T>) storage.get(key);
+        return (Collection<T>) storage.get(key);
     }
 
-    public void put(Object key, Object value) {
+    public void put(K key, T value) {
         Collection values = (Collection) storage.get(key);
         if (values == null) {
             values = new ArrayList();
         }
         values.add(value);
-        storage.put(key,values);
+        storage.put(key,(T) values);
     }
 
-    public Set keySet() {
+    public Set<K> keySet() {
         return storage.keySet();
     }
 
-    public Collection values() {
-        Collection result = new ArrayList();
-        Set keys = keySet();
+    public Collection <T> values() {
+        Collection <T> result = new ArrayList();
+        Set <K> keys = keySet();
         for (Object k : keys) {
-            result.addAll(getAll(k));
+            result.addAll(getAll((K) k));
         }
         return result;
     }

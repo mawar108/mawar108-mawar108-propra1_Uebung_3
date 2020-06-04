@@ -1,15 +1,16 @@
 package robot;
 
 import robot.control.MissionControl;
+import robot.control.Roboter;
 
 public class Main {
 
-    /*
+
     public static void main(String[] args) {
         MissionControl control = MissionControl.create();
         control.print();
         //Ausgabe: Robot is facing north at (0,0)
-        control.step();
+	    control.step();
         control.turn();
         control.step();
         control.step();
@@ -18,6 +19,5 @@ public class Main {
         control.print();
         //Ausgabe: Robot is facing east at (4,1)
     }
-    */
 
 }

@@ -5,7 +5,7 @@ import java.util.Collection;
 public class Main {
 
     public static void main(String[] args) {
-        MultiMap map = new MultiMap();
+        MultiMap <String,String> map = new MultiMap<>();
         map.put("hello", "world");
         map.put("foo", "bar");
         map.put("hello", "propra");
@@ -18,7 +18,7 @@ public class Main {
         System.out.println(map.containsKey("bar"));
 
         // Darf nicht mehr kompilieren!
-        map.put(13,"x");
+        //map.put(13,"x");
 
     }
 
